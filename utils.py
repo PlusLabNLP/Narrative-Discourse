@@ -14,7 +14,6 @@ import anthropic
 genai.configure(api_key=Config.gemini_api_key)
 openai.api_key = Config.openai_api_key
 
-
 def parse_tps(output_json, sts):
     pattern = r'"Opportunity": (\d+),\s*"Change of Plans": (\d+),\s*"Point of No Return": (\d+),\s*"Major Setback": (\d+),\s*"Climax": (\d+)'
 

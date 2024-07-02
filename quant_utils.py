@@ -30,7 +30,7 @@ def get_NRC_lexicon(path):
     return (val_dict, aro_dict, dom_dict)
 
 
-val_dict, aro_dict, _ = get_NRC_lexicon("/Users/huangtenghao/git/story_analysis/NRC-VAD-Lexicon.txt")
+val_dict, aro_dict, _ = get_NRC_lexicon("")
 
 def get_arousal_score(infs):
     '''
@@ -100,10 +100,7 @@ def get_valence_score(infs):
         rt_l.append(max(sub_scores))
     return sum,rt_l
 
-
 import numpy as np
-
-
 def plot_fitting_curve(scores, polynomial, plotting=True, color=None):
     x = positions = list(range(len(scores)))
     # x = [score[0] for score in scores]
@@ -122,7 +119,6 @@ def plot_fitting_curve(scores, polynomial, plotting=True, color=None):
         plt.plot(x, y, 'o', x_new, y_new, color=color)
         plt.xlim([x[0] - 1, x[-1] + 1])
     return y_new
-
 
 def get_interpolated_overall_scores(inferences, polynomial=15):
     if inferences == []:
